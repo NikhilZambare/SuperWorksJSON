@@ -1,0 +1,50 @@
+<app-navbar [cartCount]="cartCount"></app-navbar>
+<section class="mt-5">
+    <div class="container mb-4">
+        <div class="row">
+            <div class="col-12">
+                <h3 style="font-size: 20px;font-weight: 700;">Your Cart :</h3>
+            </div>
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col" colspan="3"> Product Details</th>
+                                <th scope="col" class="text-center">Price</th>
+                                <th scope="col">Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngIf="!cartData || cartData.length != 0">
+                            <tr *ngFor="let cart of cartData, let i=index">
+                                <td width="5%"><button class="btn btn-sm" (click)="renoveItem(cart)"><i class="fa fa-close"></i></button></td>
+                                <td width="10%"><img src="{{cart.product_img}}" width="70px" height="70px" /> </td>
+                                <td width="60%"><span class="main-title">{{cart.product_name}}</span> 
+                                    <br>
+                                    <span class="main-dsce">{{cart.dsce}}</span></td>
+                                <td width="15%"  class="text-right">{{cart.rate | currency:'INR'}} <i style="color: #656dff;" class="fa fa-close"></i></td>
+                                <td width="10%" ><input class="form-control" type="number" value="{{cart.qty}}" (input)="updateQty($event.target.value,cart)" /></td>
+                                
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="text-right" style="font-weight: 700;">Total:</td>
+                                <td class="text-right" style="font-weight: 700;"> {{totalAmmount | currency:'INR'}}</td>
+                                <td  style="font-weight: 700;">{{qtytotal}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col mb-2">
+                <div class="row">
+                    <div class="col-sm-12  col-md-6">
+                        <a routerLink="" class="btn shadow btn-secondary text-uppercase"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</a>
+                    </div>
+                    <div class="col-sm-12 col-md-6 text-right">
+                        <a routerLink="" class="btn shadow btn-success text-uppercase">Checkout <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,11 @@
+body {
+    font-family: 'Poppins';
+    font-size: 14px;
+}
+p, a, .btn, .table td, .table th{
+    font-family: 'Poppins';
+    font-size: 18px !important;
+}
+ h1, h2, h3, h4, h5, h6{
+    font-family: 'Poppins';
+}

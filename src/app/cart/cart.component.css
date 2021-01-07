@@ -1,0 +1,21 @@
+
+.shopping-cart {
+    margin-top: 20px;
+}
+.table img{
+    border: 3px solid #5f68ff;
+    border-radius: 2px;
+}
+.table .main-title{
+    color: #222438;
+    font-weight: 600;
+    margin-bottom: 0rem;
+    font-size: 16px;
+}
+.table .main-dsce{
+    color: #525252;
+    font-size: 14px !important;
+}
+.table th{
+    color: #656dff;
+}

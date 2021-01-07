@@ -1,0 +1,20 @@
+<app-navbar [cartCount]="cartCount"></app-navbar>
+<section class="mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3" *ngFor="let product of products;let i=index">
+          <div class="card shadow mb-4">
+            <img class="card-img-top" src="{{product.product_img}}" width="100%" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{product.product_name}}</h5>
+              <p class="card-text">
+               
+                {{product.rate | currency:'INR'}}</p>
+            </div>
+            <button *ngIf="product.isAdded" class="btn addcartbtn btn-lg btn-block" (click)="addToCart(product,i)">ADD TO CART</button>
+            <button *ngIf="!product.isAdded" class="btn addcartbtn btn-lg btn-block" disabled>ADDED TO CART</button>
+                      </div>
+        </div>
+      </div>
+    </div>
+  </section>
